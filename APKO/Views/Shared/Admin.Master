@@ -1,0 +1,151 @@
+﻿<%@ Import Namespace="APKO.Resources.Views.Admin.Shared" %>
+<%@ Import Namespace="APKO.Resources.Additional" %>
+
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    
+    <link type="image/x-icon" href="<%= ResolveUrl("~/Images/Admin/favicon.ico") %>" rel="shortcut icon"/>
+
+    <% Html.RenderPartial("controls/Scripts"); %>
+
+    <script src="<%= ResolveUrl("~/Scripts/plugins/fixedElement.js") %>" type="text/javascript"></script>
+
+    <link href="<%= ResolveUrl("~/Css/Admin/main.css") %>" rel="stylesheet" type="text/css" />
+    <link href="<%= ResolveUrl("~/Css/spaces.css") %>" rel="stylesheet" type="text/css" />
+
+    <script src="<%= ResolveUrl("~/Scripts/plugins/jquery.boxFocus.js") %>" type="text/javascript"></script>
+
+    <script src="<%= ResolveUrl("~/Scripts/site/DropDownMenu/DropDownMenu.js") %>" type="text/javascript"></script>
+
+    <link href="<%= ResolveUrl("~/Scripts/site/DropDownMenu/DropDownMenu.css") %>" rel="stylesheet"
+        type="text/css" />
+
+
+
+    <script language="javascript">
+
+        $(document).ready(function() {
+            $('#menu').fixedElement({ byElement: 'menuStarter' });
+            $("input[type=text], textarea").boxFocus();
+        });
+
+    </script>
+
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="logo">
+                <a href='<%= Url.Action("CategoryManage") %>'>
+                    <img src="<%= ResolveUrl("~/Images/Admin/logo.png") %>" alt="JunkyStudio" /></a> 
+                   <span style=" margin: 0 0 0 5px"><% Html.RenderPartial("controls/CultureChooserUserControl"); %> </span> 
+            </div>
+            <div id="userMenu">
+                <%= Strings.Welcome %>
+                <%= Html.Encode(Page.User.Identity.Name) %>
+                |
+                <%= Html.ActionLink("Log Off", "LogOff", "Account") %>
+            </div>
+            <div style="float: right">
+                <div id="currentElement">
+                    <table width="100%">
+                        <tr>
+                            <td nowrap="nowrap">
+                                <a href="<%= Url.Action("ContentManage") %>">
+                                    <div class="content-container">
+                                        <%= AddContentMenu.AddContent%></div>
+                                </a>
+                            </td>
+                            <td id="collapseMenu">
+                                <div>
+                                    <img src="<%= ResolveUrl("~/Scripts/site/DropDownMenu/collapse_small.png") %>" /></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="menuListDiv">
+                    <ul id="menuList">
+                        <li><a href="<%= Url.Action("CategoryManage") %>">
+                            <div class="content-container">
+                                <%= AddContentMenu.AddCategory%></div>
+                        </a></li>
+                        <li><a href="<%= Url.Action("MenuManage") %>">
+                            <div class="content-container">
+                                <%= AddContentMenu.AddMenu %></div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="mainContainer">
+            <div style="float: left; width: 100%" id="Div2">
+                <div style="margin: 0 300px 0 220px;" id="content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <div id="footer">
+                        © Junkystudio
+                    </div>
+                </div>
+            </div>
+            <div style="float: left; width: 200px; margin-left: -100%;" id="navigation">
+                <div id="home" class="block corners">
+                    <a href='http://www.arkotech.com.ua/'>
+                        <div class="link">
+                            <div class="adm-menu-home adm-menu">
+                            </div>
+                            <%= NavigationMenu.Home %></div>
+                    </a>
+                </div>
+                <div class="space20">
+                </div>
+                <div id="menu" class="block corners">
+                    <ul>
+                        <li><a href='<%= Url.Action("Contents") %>'>
+                            <div class="link">
+                                <div class="adm-menu-articles adm-menu">
+                                </div>
+                                 <%= NavigationMenu.Contents %></div>
+                        </a></li>
+                        <li><a href='<%= Url.Action("Categories") %>'>
+                            <div class="link">
+                                <div class="adm-menu-categories adm-menu">
+                                </div>
+                                <%= NavigationMenu.Categories%></div>
+                        </a></li>
+                         <%--  <li><a href='<%= Url.Action("Users") %>'>
+                           <div class="link">
+                                <div class="adm-menu-users adm-menu">
+                                </div>
+                                Users</div>
+                        </a></li>
+                      <li><a href='<%= Url.Action("Links") %>'>
+                            <div class="link">
+                                <div class="adm-menu-links adm-menu">
+                                </div>
+                                Links</div>
+                        </a></li>--%>
+                        <li><a href='<%= Url.Action("Menus") %>'>
+                            <div class="link">
+                                <div class="adm-menu-menus adm-menu">
+                                </div>
+                                <%= NavigationMenu.Menus %></div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="float: left; width: 280px; margin-left: -280px;" id="extra">
+                <div style="padding: 10px;" class="block corners">
+                    <asp:ContentPlaceHolder ID="MenuContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

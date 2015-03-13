@@ -1,0 +1,12 @@
+adminka
+login:superman
+password:apkooo
+
+bd
+bad_name:cpl0000000898_arkotech
+login:cpl0000000898_user
+password:1111111
+
+mail
+login:support@arkotech.com.ua
+password:apkooo

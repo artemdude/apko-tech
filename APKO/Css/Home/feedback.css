@@ -1,0 +1,97 @@
+﻿#fbForm
+{
+     background-color:#3d3e3e;
+     position:fixed;
+     display:none;
+     z-index:100;
+     border: solid 1px #717f81;
+}
+
+#fbClose
+{
+     cursor:pointer;
+}
+
+#fbContent
+{
+     padding: 40px 50px;
+}
+
+#fbForm h2
+{
+     color:#fff;
+}
+
+#fbForm input[type=text], #fbForm textarea
+{
+    background-color: #3d3e3e;
+    border: 1px solid #4a4b4b;
+    color: #FFFFFF;
+    padding: 8px 10px 8px 20px;
+    width: 220px;
+    margin-bottom: 14px;
+    display: block;
+    font-family: 'Arial';
+    font-size: 12px;
+}
+
+#fbForm input[type=text], #fbForm textarea, #fbForm 
+{
+     -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+     border-radius: 6px;
+}
+
+#fbSend
+{
+    cursor:pointer;
+}
+
+.watermark
+{
+    color: #CCCCCC !important;
+}
+
+#fbLoader, #fbSuccess, #fbError
+{
+     padding: 10px 0;
+     color:#fff;
+     width: 220px;
+}
+
+ 
+ /* aaaaaaaaaaa */
+ 
+ .FeedBackTable
+ {
+     width:100%;
+ }
+ 
+.FeedBackTable td
+ {
+      padding:10px;
+      border:solid 1px #ccc;
+      vertical-align: middle !important;
+ }
+ 
+ .FeedBackTable input[type="text"], .FeedBackTable textarea
+ {
+     width: 60%;
+     border: solid 1px #ccc;
+     padding:2px;
+ }
+ 
+ .fbLoader
+ {
+    display: none; 
+    float: left; 
+    padding: 5px 0 0 10px;
+ }
+ 
+  .FeedBackTable #fbSendButton
+  {
+       width:110px;
+       height:27px;
+       cursor:pointer;
+       float:left;
+   }

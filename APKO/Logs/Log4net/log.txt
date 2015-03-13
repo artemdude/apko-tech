@@ -1,0 +1,6 @@
+ERROR 2011-12-24 21:08:01,160   thr:4           341ms MVCEngine,OnActionExecuted: Object reference not set to an instance of an object.
+ERROR 2011-12-24 21:21:35,887   thr:4         23192ms MVCEngine,OnActionExecuted: Object reference not set to an instance of an object.
+ERROR 2011-12-24 21:24:33,842   thr:4         10791ms MVCEngine,OnActionExecuted: Object reference not set to an instance of an object.
+INFO  2011-12-24 21:26:58,020   thr:4          4978ms MVCEngine,ExecuteResult: Article not found
+INFO  2011-12-24 21:27:25,211   thr:4         32168ms MVCEngine,ExecuteResult: Article not found
+INFO  2011-12-24 21:30:06,541   thr:4            72ms MVCEngine,ExecuteResult: Article not found
